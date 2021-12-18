@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC } from 'react'
 
 interface Props {
-	text: string;
-	href: string;
+	text: string
+	href: string
 }
 
 export const SocialLink: FC<Props> = ({ text, href }) => {
@@ -10,5 +10,5 @@ export const SocialLink: FC<Props> = ({ text, href }) => {
 		<a className="social-link" href={href} target="_blank">
 			{text}
 		</a>
-	);
-};
+	)
+}
