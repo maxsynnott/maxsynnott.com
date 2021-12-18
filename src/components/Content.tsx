@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { animated, useSpring } from 'react-spring'
 import { TitleSlide } from './TitleSlide'
 import { WhoAmISlide } from './WhoAmISlide'
@@ -16,6 +16,16 @@ const slides = [
 
 export const Content: FC = () => {
 	const [currentSlide, setCurrentSlide] = useState(0)
+	const [chevronStyles, springApi] = useSpring(() => ({
+		from: { opacity: 0 },
+		to: { opacity: 0.33 },
+		config: { duration: 1000 },
+		delay: 3000,
+		loop: { reverse: true, delay: 100 },
+	}))
+	useEffect(() => {
+		if (currentSlide > 0) springApi.set({ opacity: 0 })
+	}, [currentSlide])
 
 	return (
 		<div className="content">
@@ -38,6 +48,10 @@ export const Content: FC = () => {
 						</animated.div>
 					)
 				})}
+
+				<animated.div className="chevron" style={chevronStyles}>
+					{'>'}
+				</animated.div>
 			</div>
 		</div>
 	)
