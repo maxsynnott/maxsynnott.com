@@ -29,8 +29,8 @@ const LINKS = [
 			'Please work for me!',
 		)}`,
 		brandClassName: 'email',
-		hoverColor: '#FFFFFF',
-		hoverBackgroundColor: '#111111',
+		hoverColor: '#000000',
+		hoverBackgroundColor: '#FFFFFF',
 	},
 ]
 

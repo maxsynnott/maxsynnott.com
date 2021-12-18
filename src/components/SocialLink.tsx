@@ -3,6 +3,7 @@ import { animated, useSpring } from 'react-spring'
 
 const DEFAULT_BACKGROUND_COLOR = '#111111'
 const DEFAULT_COLOR = '#777777'
+const DEFAULT_BORDER_COLOR = DEFAULT_COLOR
 
 interface Props {
 	text: string
@@ -21,9 +22,11 @@ export const SocialLink: FC<Props> = ({
 	const backgroundColor = hovered
 		? hoverBackgroundColor
 		: DEFAULT_BACKGROUND_COLOR
+	const borderColor = hovered ? hoverBackgroundColor : DEFAULT_BORDER_COLOR
 	const color = hovered ? hoverColor : DEFAULT_COLOR
 	const styles = useSpring({
 		backgroundColor,
+		borderColor,
 		color,
 		config: { clamp: true },
 	})
@@ -34,8 +37,8 @@ export const SocialLink: FC<Props> = ({
 			style={styles}
 			href={href}
 			target="_blank"
-			onMouseOver={() => setHovered(true)}
-			onMouseLeave={() => setHovered(false)}
+			onPointerEnter={() => setHovered(true)}
+			onPointerLeave={() => setHovered(false)}
 		>
 			{text}
 		</animated.a>

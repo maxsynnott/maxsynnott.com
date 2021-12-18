@@ -1,6 +1,8 @@
 import { FC, useState } from 'react'
 import { animated, useSpring } from 'react-spring'
 
+const DEFAULT_COLOR = '#777777'
+
 interface Props {
 	char: string
 	hoverColor: string
@@ -9,15 +11,15 @@ interface Props {
 export const AnimatedChar: FC<Props> = ({ char, hoverColor }) => {
 	const [hovered, setHovered] = useState(false)
 	const styles = useSpring({
-		color: hovered ? hoverColor : '#777777',
+		color: hovered ? hoverColor : DEFAULT_COLOR,
 		config: { mass: 10, tension: 1000 },
 	})
 
 	return (
 		<animated.span
 			style={styles}
-			onMouseOver={() => setHovered(true)}
-			onMouseLeave={() => setHovered(false)}
+			onPointerEnter={() => setHovered(true)}
+			onPointerLeave={() => setHovered(false)}
 		>
 			{char}
 		</animated.span>
