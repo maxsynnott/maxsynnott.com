@@ -1,7 +1,11 @@
-:root {
-	--bg-color: #111111;
-	--dark-text-color: #777777;
-	--light-text-color: #aaa;
+$bg-color: #111111;
+$dark-text-color: #777777;
+$light-text-color: #aaa;
+
+%centered-flex-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 body {
@@ -12,12 +16,12 @@ body {
 		monospace;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	color: var(--dark-text-color);
+	color: $dark-text-color;
+	background-color: $bg-color;
 }
 
 #root {
 	height: 100%;
-	background-color: var(--bg-color);
 	display: flex;
 	flex-direction: column;
 }
@@ -25,7 +29,7 @@ body {
 .social-link {
 	text-transform: uppercase;
 	text-decoration: none;
-	border: 1px solid var(--dark-text-color);
+	border: 1px solid $dark-text-color;
 	padding: 5px;
 	text-align: center;
 }
@@ -35,17 +39,13 @@ body {
 	text-align: center;
 	text-transform: uppercase;
 	margin: 0;
-	color: var(--light-text-color);
+	color: $light-text-color;
 	font-weight: lighter;
-}
-
-.full-width {
-	width: 100%;
 }
 
 .name {
 	margin: 0;
-	color: var(--light-text-color);
+	color: $light-text-color;
 }
 
 .header {
@@ -60,9 +60,8 @@ body {
 }
 
 .slideshow {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@extend %centered-flex-box;
+
 	position: relative;
 	height: 100%;
 	cursor: pointer;
@@ -73,9 +72,7 @@ body {
 }
 
 .social-links-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@extend %centered-flex-box;
 }
 
 .slide-container {
@@ -84,47 +81,19 @@ body {
 }
 
 .slide {
-	padding: 15%;
+	padding-left: 15%;
+	padding-right: 15%;
 }
 
 .slide-title {
-	color: var(--light-text-color);
+	color: $light-text-color;
 }
 
 .profile-image {
+	margin: auto;
 	width: 30vh;
 	height: 30vh;
 	border-radius: 50%;
 	background-position: center;
 	background-size: 100% auto;
-}
-
-.contact-me-container {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-}
-
-.centered-flex-box {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.linkedin:hover {
-	background-color: #2867b2;
-	border-color: #2867b2;
-	color: #fff;
-}
-
-.instagram:hover {
-	background-color: #f77737;
-	border-color: #f77737;
-	color: #fff;
-}
-
-.github:hover {
-	background-color: #333;
-	border-color: #333;
-	color: #fff;
 }

@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { SocialLink } from './components/SocialLink'
 import { Header } from './components/Header'
 import { Content } from './components/Content'
 import { Footer } from './components/Footer'
