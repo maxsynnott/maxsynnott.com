@@ -20,6 +20,10 @@ body {
 	background-color: $bg-color;
 }
 
+html {
+	overflow: hidden;
+}
+
 #root {
 	height: 100%;
 	display: flex;
@@ -96,4 +100,11 @@ body {
 	border-radius: 50%;
 	background-position: center;
 	background-size: 100% auto;
+}
+
+.chevron {
+	position: absolute;
+	font-size: 14vw;
+	top: 25%;
+	right: 2%;
 }
