@@ -15,10 +15,14 @@ const links = [
 
 export const Footer: FC = () => {
 	return (
-		<div className="footer">
-			{links.map(({ text, href }) => (
-				<SocialLink text={text} href={href} />
-			))}
-		</div>
+		<>
+			<div className="footer">
+				<div className="social-links-container">
+					{links.map(({ text, href }) => (
+						<SocialLink key={text} text={text} href={href} />
+					))}
+				</div>
+			</div>
+		</>
 	)
 }
