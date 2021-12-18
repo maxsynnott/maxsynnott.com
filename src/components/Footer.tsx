@@ -2,14 +2,27 @@ import { FC } from 'react'
 import { SocialLink } from './SocialLink'
 
 const links = [
-	{ text: 'instagram', href: 'https://www.instagram.com/synnott.max' },
-	{ text: 'linkedin', href: 'https://www.linkedin.com/in/maxsynnott/' },
-	{ text: 'github', href: 'https://www.github.com/maxsynnott' },
+	{
+		text: 'instagram',
+		href: 'https://www.instagram.com/synnott.max',
+		brandClassName: 'instagram',
+	},
+	{
+		text: 'linkedin',
+		href: 'https://www.linkedin.com/in/maxsynnott/',
+		brandClassName: 'linkedin',
+	},
+	{
+		text: 'github',
+		href: 'https://www.github.com/maxsynnott',
+		brandClassName: 'github',
+	},
 	{
 		text: 'email',
 		href: `mailto:maxryansynnott@gmail.com?subject=${encodeURIComponent(
 			'Please work for me!',
 		)}`,
+		brandClassName: 'email',
 	},
 ]
 
@@ -18,8 +31,13 @@ export const Footer: FC = () => {
 		<>
 			<div className="footer">
 				<div className="social-links-container">
-					{links.map(({ text, href }) => (
-						<SocialLink key={text} text={text} href={href} />
+					{links.map(({ text, href, brandClassName }) => (
+						<SocialLink
+							key={text}
+							text={text}
+							href={href}
+							brandClassName={brandClassName}
+						/>
 					))}
 				</div>
 			</div>
