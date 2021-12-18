@@ -6,16 +6,22 @@ const links = [
 		text: 'instagram',
 		href: 'https://www.instagram.com/synnott.max',
 		brandClassName: 'instagram',
+		hoverColor: '#FFFFFF',
+		hoverBackgroundColor: '#f77737',
 	},
 	{
 		text: 'linkedin',
 		href: 'https://www.linkedin.com/in/maxsynnott/',
 		brandClassName: 'linkedin',
+		hoverColor: '#FFFFFF',
+		hoverBackgroundColor: '#2867b2',
 	},
 	{
 		text: 'github',
 		href: 'https://www.github.com/maxsynnott',
 		brandClassName: 'github',
+		hoverColor: '#FFFFFF',
+		hoverBackgroundColor: '#333',
 	},
 	{
 		text: 'email',
@@ -23,6 +29,8 @@ const links = [
 			'Please work for me!',
 		)}`,
 		brandClassName: 'email',
+		hoverColor: '#FFFFFF',
+		hoverBackgroundColor: '#111111',
 	},
 ]
 
@@ -31,13 +39,8 @@ export const Footer: FC = () => {
 		<>
 			<div className="footer">
 				<div className="social-links-container">
-					{links.map(({ text, href, brandClassName }) => (
-						<SocialLink
-							key={text}
-							text={text}
-							href={href}
-							brandClassName={brandClassName}
-						/>
+					{links.map((props, i) => (
+						<SocialLink key={i} {...props} />
 					))}
 				</div>
 			</div>

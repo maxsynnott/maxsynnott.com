@@ -23,18 +23,11 @@ body {
 }
 
 .social-link {
-	color: var(--dark-text-color);
 	text-transform: uppercase;
 	text-decoration: none;
 	border: 1px solid var(--dark-text-color);
 	padding: 5px;
 	text-align: center;
-}
-
-.social-link:hover {
-	color: var(--bg-color);
-	background-color: var(--light-text-color);
-	border-color: var(--light-text-color);
 }
 
 .title {
