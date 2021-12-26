@@ -24,7 +24,10 @@ export const Content: FC = () => {
 		loop: { reverse: true, delay: 100 },
 	}))
 	useEffect(() => {
-		if (currentSlide > 0) springApi.set({ opacity: 0 })
+		if (currentSlide > 0) {
+			springApi.stop()
+			springApi.set({ opacity: 0 })
+		}
 	}, [currentSlide])
 
 	return (
